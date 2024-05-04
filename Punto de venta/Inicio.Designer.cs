@@ -56,9 +56,10 @@
             this.ClientesMenu,
             this.ReportesMenu,
             this.AcercadeMenu});
-            this.menuTitulo.Location = new System.Drawing.Point(0, 48);
+            this.menuTitulo.Location = new System.Drawing.Point(0, 39);
             this.menuTitulo.Name = "menuTitulo";
-            this.menuTitulo.Size = new System.Drawing.Size(1215, 78);
+            this.menuTitulo.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuTitulo.Size = new System.Drawing.Size(911, 78);
             this.menuTitulo.TabIndex = 0;
             this.menuTitulo.Text = "menuStrip1";
             // 
@@ -173,8 +174,9 @@
             this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
+            this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menu.Size = new System.Drawing.Size(1215, 48);
+            this.menu.Size = new System.Drawing.Size(911, 39);
             this.menu.TabIndex = 1;
             this.menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
             // 
@@ -184,24 +186,27 @@
             this.label1.BackColor = System.Drawing.Color.SteelBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Location = new System.Drawing.Point(2, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(339, 39);
+            this.label1.Size = new System.Drawing.Size(272, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Abarrotes \"Don Beto\"";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1215, 465);
+            this.ClientSize = new System.Drawing.Size(911, 378);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuTitulo);
             this.Controls.Add(this.menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuTitulo;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Punto de venta";
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.menuTitulo.ResumeLayout(false);
