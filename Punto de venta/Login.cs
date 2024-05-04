@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
+using CapaEntidad;
 
 namespace Punto_de_venta
 {
@@ -29,17 +31,26 @@ namespace Punto_de_venta
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Inicio form = new Inicio();
+            List<Usuario> Test = new CN_Usuario().Listar();
+            Usuario oUsuario = new CN_Usuario().Listar().Where(u => u.Documento == txtdocumento.Text && u.Clave == txtclave.Text).FirstOrDefault();
+            if(oUsuario != null)
+            {
+                Inicio form = new Inicio();
 
-            form.Show();
-            this.Hide();
+                form.Show();
+                this.Hide();
 
-            form.FormClosing += Frm_Closing;
+                form.FormClosing += Frm_Closing;
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el usuario","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
 
         }
 
         private void Frm_Closing(object sender, FormClosingEventArgs e)
-        {
+         {
 
             txtdocumento.Text = "";
             txtclave.Text = "";
