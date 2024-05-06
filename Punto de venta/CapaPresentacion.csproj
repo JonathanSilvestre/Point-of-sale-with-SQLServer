@@ -55,6 +55,66 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FRMCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMCategoria.Designer.cs">
+      <DependentUpon>FRMCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMClientes.Designer.cs">
+      <DependentUpon>FRMClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMCompras.Designer.cs">
+      <DependentUpon>FRMCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMDetalleCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMDetalleCompras.Designer.cs">
+      <DependentUpon>FRMDetalleCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMDetalleVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMDetalleVentas.Designer.cs">
+      <DependentUpon>FRMDetalleVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMProducto.Designer.cs">
+      <DependentUpon>FRMProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMProveedores.Designer.cs">
+      <DependentUpon>FRMProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMReportes.Designer.cs">
+      <DependentUpon>FRMReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMUsuarios.Designer.cs">
+      <DependentUpon>FRMUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMVentas.Designer.cs">
+      <DependentUpon>FRMVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +129,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FRMCategoria.resx">
+      <DependentUpon>FRMCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMClientes.resx">
+      <DependentUpon>FRMClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMCompras.resx">
+      <DependentUpon>FRMCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMProducto.resx">
+      <DependentUpon>FRMProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMProveedores.resx">
+      <DependentUpon>FRMProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMReportes.resx">
+      <DependentUpon>FRMReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMUsuarios.resx">
+      <DependentUpon>FRMUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMVentas.resx">
+      <DependentUpon>FRMVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>

@@ -31,11 +31,13 @@ namespace Punto_de_venta
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+
             List<Usuario> Test = new CN_Usuario().Listar();
             Usuario oUsuario = new CN_Usuario().Listar().Where(u => u.Documento == txtdocumento.Text && u.Clave == txtclave.Text).FirstOrDefault();
+            
             if(oUsuario != null)
             {
-                Inicio form = new Inicio();
+                Inicio form = new Inicio(oUsuario);
 
                 form.Show();
                 this.Hide();
