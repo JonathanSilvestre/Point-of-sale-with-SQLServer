@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaEntidad;
 using FontAwesome.Sharp;
+using CapaNegocio;
 
 namespace Punto_de_venta
 {
@@ -25,6 +26,15 @@ namespace Punto_de_venta
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            List<Permiso> ListaPermisos = new CN_Permiso().Listar(usuarioActual.IdUsuario);
+            foreach (IconMenuItem iconmenu in menuTitulo.Items)
+            {
+                bool encontrado = ListaPermisos.Any(m => m.NombreMenu == iconmenu.Name);
+                if (encontrado == false)
+                {
+                    iconmenu.Visible = false;
+                }
+            }
             lblUsuario.Text = usuarioActual.NombreCompleto;
         }
 

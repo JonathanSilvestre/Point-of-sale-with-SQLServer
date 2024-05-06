@@ -108,7 +108,7 @@
             this.SubMenuCategoria.IconColor = System.Drawing.Color.Black;
             this.SubMenuCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuCategoria.Name = "SubMenuCategoria";
-            this.SubMenuCategoria.Size = new System.Drawing.Size(125, 22);
+            this.SubMenuCategoria.Size = new System.Drawing.Size(184, 26);
             this.SubMenuCategoria.Text = "Categoria";
             this.SubMenuCategoria.Click += new System.EventHandler(this.iconMenuItem1_Click);
             // 
@@ -118,7 +118,7 @@
             this.SubMenuProducto.IconColor = System.Drawing.Color.Black;
             this.SubMenuProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuProducto.Name = "SubMenuProducto";
-            this.SubMenuProducto.Size = new System.Drawing.Size(125, 22);
+            this.SubMenuProducto.Size = new System.Drawing.Size(184, 26);
             this.SubMenuProducto.Text = "Producto";
             this.SubMenuProducto.Click += new System.EventHandler(this.SubMenuProducto_Click);
             // 
