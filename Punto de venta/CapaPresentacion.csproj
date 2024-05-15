@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades\OpcionCombo.cs" />
     <EmbeddedResource Include="FRMCategoria.resx">
       <DependentUpon>FRMCategoria.cs</DependentUpon>
     </EmbeddedResource>
