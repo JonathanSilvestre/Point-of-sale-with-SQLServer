@@ -18,9 +18,11 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select IdUsuario,Documento,NombreCompleto,Correo,Clave,Estado from usuario";
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select u.IdUsuario,u.Documento,u.NombreCompleto,u.Correo,u.Clave,u.Estado,r.IdRol,r.Descripcion from usuario u");
+                    query.AppendLine("inner join rol r on r.IdRol = u.IdRol");
 
-                    SqlCommand cmd = new SqlCommand(query,oConexion);
+                    SqlCommand cmd = new SqlCommand(query.ToString(),oConexion);
                     cmd.CommandType = CommandType.Text;
                     oConexion.Open();
 
@@ -35,7 +37,8 @@ namespace CapaDatos
                                 NombreCompleto = dr["NombreCompleto"].ToString(),
                                 Correo = dr["Correo"].ToString(),
                                 Clave = dr["Clave"].ToString(),
-                                Estado = Convert.ToBoolean(dr["Estado"])
+                                Estado = Convert.ToBoolean(dr["Estado"]),
+                                oRol = new Rol () { IdRol = Convert.ToInt32(dr["IdRol"]),Descripcion = dr["Descripcion"].ToString() }
                             });
                         }
                     }

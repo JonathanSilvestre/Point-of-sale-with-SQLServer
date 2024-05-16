@@ -311,6 +311,7 @@
             this.dgvdata.RowTemplate.Height = 28;
             this.dgvdata.Size = new System.Drawing.Size(839, 397);
             this.dgvdata.TabIndex = 21;
+            this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
             // 
             // label10
             // 
@@ -422,7 +423,6 @@
             // 
             this.txtbusqueda.Location = new System.Drawing.Point(907, 31);
             this.txtbusqueda.Name = "txtbusqueda";
-            this.txtbusqueda.PasswordChar = '*';
             this.txtbusqueda.Size = new System.Drawing.Size(122, 20);
             this.txtbusqueda.TabIndex = 26;
             // 

@@ -47,6 +47,18 @@ namespace Punto_de_venta
             cbobusqueda.DisplayMember = "Texto";
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
+            
+            //Mostrar todos los usuarios
+            List<Usuario> listaUsuario = new CN_Usuario().Listar();
+            foreach (Usuario item in listaUsuario)
+            {
+                dgvdata.Rows.Add(new object[] {"",item.IdUsuario,item.Documento,item.NombreCompleto,item.Correo,item.Clave,
+                item.oRol.IdRol,
+                item.oRol.Descripcion,
+                item.Estado == true ?1 : 0 ,
+                item.Estado == true ?"Activo" : "Desactivo"
+            });
+            }
         }
 
         private void BTNGuardar_Click(object sender, EventArgs e)
@@ -69,5 +81,24 @@ namespace Punto_de_venta
             cboRol.SelectedIndex = 0;
             cboEstado.SelectedIndex = 0;
         }
+
+        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                return;
+            }
+            if (e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds,DataGridViewPaintParts.All);
+                var w = Properties.Resources.check.Width;
+                var h = Properties.Resources.check.Height;
+                var x = e.CellBounds.Left + ((e.CellBounds.Width)-w) / 2;
+                var y = e.CellBounds.Top + ((e.CellBounds.Height) - h) / 2;
+                e.Graphics.DrawImage(Properties.Resources.check, new Rectangle(x,y,w,h));
+                e.Handled = true;
+            }
+        }
+
     }
 }
