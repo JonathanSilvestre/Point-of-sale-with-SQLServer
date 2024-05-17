@@ -63,15 +63,40 @@ namespace Punto_de_venta
 
         private void BTNGuardar_Click(object sender, EventArgs e)
         {
-            dgvdata.Rows.Add(new object[] {"",txtId.Text,txtDocumento.Text,txtNombreCompleto.Text,txtCorreo.Text,txtClave.Text,
+            string mensaje = string.Empty;
+
+            Usuario objUsuario = new Usuario() { 
+                IdUsuario = Convert.ToInt32(txtId.Text),
+                Documento = txtDocumento.Text,
+                NombreCompleto = txtNombreCompleto.Text,
+                Correo = txtCorreo.Text,
+                Clave = txtClave.Text,
+                oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo)cboRol.SelectedItem).Valor)},
+                Estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).Valor) == 1? true :false,
+
+            };
+
+            int idUsuarioGenerado = new CN_Usuario().Registrar(objUsuario,out mensaje);
+
+            if (idUsuarioGenerado != 0)
+            {
+                dgvdata.Rows.Add(new object[] {"",idUsuarioGenerado,txtDocumento.Text,txtNombreCompleto.Text,txtCorreo.Text,txtClave.Text,
                 ((OpcionCombo)cboRol.SelectedItem).Valor.ToString(),((OpcionCombo)cboRol.SelectedItem).Texto.ToString(),
                 ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString(),((OpcionCombo)cboEstado.SelectedItem).Texto.ToString()
-            });
-            Limpiar();
+                });
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show(mensaje);
+            }
+
+            
         }
 
         private void Limpiar()
         {
+            txtIndice.Text = "-1";
             txtId.Text = "0";
             txtDocumento.Text = "";
             txtNombreCompleto.Text = "";
@@ -84,7 +109,7 @@ namespace Punto_de_venta
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if(e.RowIndex < 0)
             {
                 return;
             }
@@ -100,5 +125,42 @@ namespace Punto_de_venta
             }
         }
 
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvdata.Columns[e.ColumnIndex].Name == "BTNSeleccionar")
+            {
+                int indice = e.RowIndex;
+                if(indice >= 0)
+                {
+                    txtIndice.Text = indice.ToString();
+                    txtId.Text = dgvdata.Rows[indice].Cells["Id"].Value.ToString();
+                    txtDocumento.Text = dgvdata.Rows[indice].Cells["Documento"].Value.ToString();
+                    txtNombreCompleto.Text = dgvdata.Rows[indice].Cells["NombreCompleto"].Value.ToString();
+                    txtCorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString(); 
+                    txtClave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
+                    txtConfirmarClave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
+
+                    foreach(OpcionCombo oc in cboRol.Items)
+                    {
+                        if(Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IdRol"].Value.ToString()))
+                        {
+                            int index_combo = cboRol.Items.IndexOf(oc);
+                            cboRol.SelectedIndex = index_combo;
+                            break;
+                        }
+                    }
+
+                    foreach (OpcionCombo oc in cboEstado.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value.ToString()))
+                        {
+                            int index_combo = cboEstado.Items.IndexOf(oc);
+                            cboEstado.SelectedIndex = index_combo;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
