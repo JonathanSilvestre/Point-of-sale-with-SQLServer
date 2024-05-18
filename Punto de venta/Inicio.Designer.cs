@@ -303,9 +303,9 @@
             // contenedor
             // 
             this.contenedor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.contenedor.Location = new System.Drawing.Point(0, 120);
+            this.contenedor.Location = new System.Drawing.Point(0, 111);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1135, 584);
+            this.contenedor.Size = new System.Drawing.Size(1135, 593);
             this.contenedor.TabIndex = 5;
             // 
             // Inicio
