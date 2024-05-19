@@ -49,6 +49,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_Categoria.cs" />
     <Compile Include="CN_Permiso.cs" />
     <Compile Include="CN_Proveedor.cs" />
     <Compile Include="CN_Rol.cs" />
