@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_Categoria.cs" />
+    <Compile Include="CD_Cliente.cs" />
     <Compile Include="CD_Permiso.cs" />
     <Compile Include="CD_Proveedor.cs" />
     <Compile Include="CD_Rol.cs" />
@@ -59,13 +60,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
       <Project>{5395ceb6-6aee-45b1-b049-34a12331542c}</Project>
       <Name>CapaEntidad</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

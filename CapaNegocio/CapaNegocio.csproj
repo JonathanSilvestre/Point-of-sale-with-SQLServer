@@ -50,14 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CN_Categoria.cs" />
+    <Compile Include="CN_Cliente.cs" />
     <Compile Include="CN_Permiso.cs" />
     <Compile Include="CN_Proveedor.cs" />
     <Compile Include="CN_Rol.cs" />
     <Compile Include="CN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
@@ -68,6 +66,9 @@
       <Project>{5395ceb6-6aee-45b1-b049-34a12331542c}</Project>
       <Name>CapaEntidad</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
