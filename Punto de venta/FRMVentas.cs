@@ -12,9 +12,15 @@ namespace Punto_de_venta
 {
     public partial class FRMVentas : Form
     {
+
         public FRMVentas()
         {
             InitializeComponent();
+        }
+
+        private void FRMVentas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -41,8 +41,9 @@ namespace Punto_de_venta
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
-            //Mostrar todos los usuarios
+            //Mostrar todos los clientes
             List<Cliente> lista = new CN_Cliente().Listar();
+
             foreach (Cliente item in lista)
             {
                 dgvdata.Rows.Add(new object[] {"",item.IdCliente,item.Documento,item.NombreCompleto,item.Correo,item.Telefono,

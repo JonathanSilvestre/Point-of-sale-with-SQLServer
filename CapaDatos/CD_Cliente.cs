@@ -19,7 +19,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select IdCliente,Documento,NombreCompleto,Correo,Telefono,u.Estado from CLIENTE");
+                    query.AppendLine("select IdCliente,Documento,NombreCompleto,Correo,Telefono,Estado from CLIENTE");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oConexion);
                     cmd.CommandType = CommandType.Text;
@@ -130,9 +130,9 @@ namespace CapaDatos
             {
                 using (SqlConnection oConexion = new SqlConnection(Conexion.Cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("Delete from cliente where IdCliente = @id", oConexion);
+                    SqlCommand cmd = new SqlCommand("delete from cliente where IdCliente = @id", oConexion);
                     cmd.Parameters.AddWithValue("id", obj.IdCliente);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandType = CommandType.Text;
                     oConexion.Open();
                     respuesta = cmd.ExecuteNonQuery() > 0 ? true : false;
                 }
