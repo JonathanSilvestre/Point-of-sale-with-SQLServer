@@ -27,5 +27,18 @@ namespace CapaNegocio
 
         }
 
+        public Compra ObtenerCompra(string numero)
+        {
+            Compra oCompra = objCD_Compra.ObtenerCompra(numero);
+
+            if(oCompra.IdCompra != 0)
+            {
+                List<DetalleCompra> oDetalleCompra = objCD_Compra.ObtenerDetalleCompra(oCompra.IdCompra);
+                oCompra.oDetalleCompras = oDetalleCompra;
+
+            }
+            return oCompra;
+        }
+
     }
 }
