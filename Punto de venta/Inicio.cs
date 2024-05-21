@@ -123,5 +123,10 @@ namespace Punto_de_venta
         {
             AbrirFormulario((IconMenuItem)sender, new FRMReportes());
         }
+
+        private void submenonegocio_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(MantenimientoMenu, new FRMNegocio());
+        }
     }
 }

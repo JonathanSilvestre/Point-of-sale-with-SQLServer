@@ -36,6 +36,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
     <Reference Include="ClosedXML, Version=0.102.2.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
       <HintPath>..\packages\ClosedXML.0.102.2\lib\netstandard2.0\ClosedXML.dll</HintPath>
     </Reference>
@@ -169,6 +172,12 @@
     <Compile Include="FRMDetalleVentas.Designer.cs">
       <DependentUpon>FRMDetalleVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMNegocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMNegocio.Designer.cs">
+      <DependentUpon>FRMNegocio.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMDetalleCompras.resx">
       <DependentUpon>FRMDetalleCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMNegocio.resx">
+      <DependentUpon>FRMNegocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMProducto.resx">
       <DependentUpon>FRMProducto.cs</DependentUpon>
