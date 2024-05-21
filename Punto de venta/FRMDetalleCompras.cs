@@ -16,5 +16,10 @@ namespace Punto_de_venta
         {
             InitializeComponent();
         }
+
+        private void FRMDetalleCompras_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
