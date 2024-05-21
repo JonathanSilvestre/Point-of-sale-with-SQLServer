@@ -66,6 +66,7 @@
             this.txtcodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.BTNexportar_Click = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +91,7 @@
             this.btnLimpiarBuscador.IconColor = System.Drawing.Color.Black;
             this.btnLimpiarBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiarBuscador.IconSize = 18;
-            this.btnLimpiarBuscador.Location = new System.Drawing.Point(1437, 34);
+            this.btnLimpiarBuscador.Location = new System.Drawing.Point(1431, 89);
             this.btnLimpiarBuscador.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarBuscador.Name = "btnLimpiarBuscador";
             this.btnLimpiarBuscador.Size = new System.Drawing.Size(52, 31);
@@ -111,7 +112,7 @@
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 18;
-            this.btnBuscar.Location = new System.Drawing.Point(1377, 33);
+            this.btnBuscar.Location = new System.Drawing.Point(1371, 88);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(52, 31);
@@ -123,7 +124,7 @@
             // 
             // txtbusqueda
             // 
-            this.txtbusqueda.Location = new System.Drawing.Point(1206, 38);
+            this.txtbusqueda.Location = new System.Drawing.Point(1200, 93);
             this.txtbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(161, 22);
@@ -133,7 +134,7 @@
             // 
             this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(1048, 37);
+            this.cbobusqueda.Location = new System.Drawing.Point(1042, 92);
             this.cbobusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(149, 24);
@@ -143,7 +144,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(966, 41);
+            this.label11.Location = new System.Drawing.Point(960, 96);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 16);
@@ -168,11 +169,10 @@
             this.label10.Location = new System.Drawing.Point(409, 18);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.label10.Size = new System.Drawing.Size(1115, 66);
+            this.label10.Padding = new System.Windows.Forms.Padding(3, 6, 0, 0);
+            this.label10.Size = new System.Drawing.Size(1115, 111);
             this.label10.TabIndex = 50;
             this.label10.Text = "Lista de Productos:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
             // 
@@ -251,7 +251,7 @@
             this.PrecioVenta,
             this.EstadoValor,
             this.Estado});
-            this.dgvdata.Location = new System.Drawing.Point(409, 104);
+            this.dgvdata.Location = new System.Drawing.Point(409, 134);
             this.dgvdata.Margin = new System.Windows.Forms.Padding(4);
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";
@@ -261,7 +261,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(1119, 489);
+            this.dgvdata.Size = new System.Drawing.Size(1119, 518);
             this.dgvdata.TabIndex = 49;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
@@ -502,11 +502,36 @@
             this.label1.Size = new System.Drawing.Size(370, 665);
             this.label1.TabIndex = 31;
             // 
+            // BTNexportar_Click
+            // 
+            this.BTNexportar_Click.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BTNexportar_Click.BackColor = System.Drawing.Color.White;
+            this.BTNexportar_Click.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BTNexportar_Click.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BTNexportar_Click.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BTNexportar_Click.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTNexportar_Click.ForeColor = System.Drawing.Color.Black;
+            this.BTNexportar_Click.IconChar = FontAwesome.Sharp.IconChar.Expand;
+            this.BTNexportar_Click.IconColor = System.Drawing.Color.Black;
+            this.BTNexportar_Click.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BTNexportar_Click.IconSize = 18;
+            this.BTNexportar_Click.Location = new System.Drawing.Point(416, 89);
+            this.BTNexportar_Click.Margin = new System.Windows.Forms.Padding(4);
+            this.BTNexportar_Click.Name = "BTNexportar_Click";
+            this.BTNexportar_Click.Size = new System.Drawing.Size(169, 27);
+            this.BTNexportar_Click.TabIndex = 59;
+            this.BTNexportar_Click.Text = "Descargar Excel";
+            this.BTNexportar_Click.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTNexportar_Click.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BTNexportar_Click.UseVisualStyleBackColor = false;
+            this.BTNexportar_Click.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // FRMProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1522, 665);
+            this.Controls.Add(this.BTNexportar_Click);
             this.Controls.Add(this.txtIndice);
             this.Controls.Add(this.btnLimpiarBuscador);
             this.Controls.Add(this.btnBuscar);
@@ -578,5 +603,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private FontAwesome.Sharp.IconButton BTNexportar_Click;
     }
 }
