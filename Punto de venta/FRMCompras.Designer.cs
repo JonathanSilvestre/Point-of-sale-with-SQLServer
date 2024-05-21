@@ -96,6 +96,7 @@
             // 
             // dgvdata
             // 
+            this.dgvdata.AllowUserToAddRows = false;
             this.dgvdata.BackgroundColor = System.Drawing.Color.White;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -109,6 +110,7 @@
             this.dgvdata.GridColor = System.Drawing.SystemColors.Control;
             this.dgvdata.Location = new System.Drawing.Point(125, 349);
             this.dgvdata.Name = "dgvdata";
+            this.dgvdata.ReadOnly = true;
             this.dgvdata.Size = new System.Drawing.Size(790, 148);
             this.dgvdata.TabIndex = 29;
             // 
@@ -116,38 +118,45 @@
             // 
             this.idProducto.HeaderText = "IdProducto";
             this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
             this.idProducto.Visible = false;
             // 
             // Producto
             // 
             this.Producto.HeaderText = "Producto";
             this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
             // 
             // Precio
             // 
             this.Precio.HeaderText = "Precio Compra";
             this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
             // 
             // Preciov
             // 
             this.Preciov.HeaderText = "Precio Venta";
             this.Preciov.Name = "Preciov";
+            this.Preciov.ReadOnly = true;
             this.Preciov.Visible = false;
             // 
             // Cantidad
             // 
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             // 
             // Subtotal
             // 
             this.Subtotal.HeaderText = "Subtotal";
             this.Subtotal.Name = "Subtotal";
+            this.Subtotal.ReadOnly = true;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // groupBox3
             // 
