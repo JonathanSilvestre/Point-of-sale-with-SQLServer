@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Punto_de_venta.Modales;
 using Punto_de_venta.Utilidades;
 using System;
@@ -138,13 +139,13 @@ namespace Punto_de_venta
                 Producto oProducto = new CN_Producto().Listar().Where(p => p.Codigo ==  txtcodproducto.Text && p.Estado == true).FirstOrDefault();
 
                 if (oProducto != null) {
-                    txtcodproducto.BackColor = Color.Honeydew;
+                    txtcodproducto.BackColor = System.Drawing.Color.Aquamarine;
                     txtidproducto.Text = oProducto.IdProducto.ToString();
                     txtproducto.Text = oProducto.Nombre;
                     txtpreciocompra.Select();
                 }
                 else {
-                    txtcodproducto.BackColor = Color.MistyRose;
+                    txtcodproducto.BackColor = System.Drawing.Color.BurlyWood;
                     txtidproducto.Text = "0";
                     txtproducto.Text = "";
                 }
@@ -213,7 +214,7 @@ namespace Punto_de_venta
         {
             txtidproducto.Text = "0";
             txtcodproducto.Text = "";
-            txtcodproducto.BackColor = Color.White;
+            txtcodproducto.BackColor = System.Drawing.Color.Magenta;
             txtproducto.Text = "";
             txtpreciocompra.Text = "";
             txtprecioventa.Text = "";
@@ -234,5 +235,79 @@ namespace Punto_de_venta
 
         }
 
+        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            if (e.ColumnIndex == 6)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.check.Width;
+                var h = Properties.Resources.check.Height;
+                var x = e.CellBounds.Left + ((e.CellBounds.Width) - w) / 2;
+                var y = e.CellBounds.Top + ((e.CellBounds.Height) - h) / 2;
+                e.Graphics.DrawImage(Properties.Resources.trash, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        //Boton para eliminar 
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvdata.Columns[e.ColumnIndex].Name == "btneliminar")
+            {
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    dgvdata.Rows.RemoveAt(indice);
+                    calcularTotal();
+
+                }
+            }
+        }
+
+        private void btnregistrar_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtidproveedor.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar  un proveedor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (dgvdata.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe ingresar productos en la compra", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            DataTable detalle_compra = new DataTable();
+
+            detalle_compra.Columns.Add("IdProducto", typeof(int));
+            detalle_compra.Columns.Add("PrecioCompra", typeof(decimal));
+            detalle_compra.Columns.Add("PrecioVenta", typeof(decimal));
+            detalle_compra.Columns.Add("Cantidad", typeof(int));
+            detalle_compra.Columns.Add("MontoTotal", typeof(decimal));
+
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                detalle_compra.Rows.Add(
+                    new object[]{
+                        Convert.ToInt32(row.Cells["IdProducto"].Value.ToString()),
+                        row.Cells["PrecioCompra"].Value.ToString(),
+                        row.Cells["PrecioVenta"].Value.ToString(),
+                        row.Cells["Cantidad"].Value.ToString(),
+                        row.Cells["SubTotal"].Value.ToString(),
+
+                    });
+
+            }
+
+            int idcorrelativo = new CN_Compra().ObtenerCorrelativo();
+            string numerodocumento = string.Format("{0:00000}", idcorrelativo);
+            
+        }
     }
 }
