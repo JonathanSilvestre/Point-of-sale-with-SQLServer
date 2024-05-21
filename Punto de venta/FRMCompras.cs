@@ -202,9 +202,37 @@ namespace Punto_de_venta
 
                 });
 
+                calcularTotal();
+                limpiarProducto();
+                txtcodproducto.Select();
+
             }
         }
 
+        private void limpiarProducto()
+        {
+            txtidproducto.Text = "0";
+            txtcodproducto.Text = "";
+            txtcodproducto.BackColor = Color.White;
+            txtproducto.Text = "";
+            txtpreciocompra.Text = "";
+            txtprecioventa.Text = "";
+            txtcantidad.Value = 1;
+
+        }
       
+        private void calcularTotal()
+        {
+
+            decimal total = 0;
+            if (dgvdata.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvdata.Rows)
+                    total += Convert.ToDecimal(row.Cells["Subtotal"].Value.ToString());
+            }
+            txttotalpagar.Text = total.ToString("0.00");
+
+        }
+
     }
 }
