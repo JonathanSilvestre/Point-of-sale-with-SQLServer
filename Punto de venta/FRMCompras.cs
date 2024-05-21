@@ -182,11 +182,12 @@ namespace Punto_de_venta
 
             foreach (DataGridViewRow fila in dgvdata.Rows)
             {
-                if (fila.Cells["idProducto"].Value.ToString() == txtidproducto.Text)
-                {
-                    producto_existe = true;
-                    break;
-                }
+                    if ( (fila.Cells["idProducto"].Value != null) && fila.Cells["idProducto"].Value.ToString() == txtidproducto.Text)
+                    {
+                        producto_existe = true;
+                        break;
+                    }
+                
             }
 
             if(!producto_existe) {
