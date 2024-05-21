@@ -31,6 +31,13 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txttotalpagar = new System.Windows.Forms.TextBox();
             this.dgvdata = new System.Windows.Forms.DataGridView();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btneliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtcantidad = new System.Windows.Forms.NumericUpDown();
             this.txtprecioventa = new System.Windows.Forms.TextBox();
@@ -62,13 +69,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnregistrar = new FontAwesome.Sharp.IconButton();
             this.btnagregarproducto = new FontAwesome.Sharp.IconButton();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btneliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtcantidad)).BeginInit();
@@ -115,6 +115,50 @@
             this.dgvdata.TabIndex = 29;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "IdProducto";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            this.idProducto.Visible = false;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            // 
+            // PrecioCompra
+            // 
+            this.PrecioCompra.HeaderText = "Precio Compra";
+            this.PrecioCompra.Name = "PrecioCompra";
+            this.PrecioCompra.ReadOnly = true;
+            // 
+            // PrecioVenta
+            // 
+            this.PrecioVenta.HeaderText = "Precio Venta";
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.ReadOnly = true;
+            this.PrecioVenta.Visible = false;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            this.Subtotal.ReadOnly = true;
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.HeaderText = "";
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.ReadOnly = true;
             // 
             // groupBox3
             // 
@@ -182,6 +226,7 @@
             this.txtidproducto.Name = "txtidproducto";
             this.txtidproducto.Size = new System.Drawing.Size(23, 20);
             this.txtidproducto.TabIndex = 6;
+            this.txtidproducto.Visible = false;
             // 
             // btnbuscarproducto
             // 
@@ -278,6 +323,7 @@
             this.txtidproveedor.Name = "txtidproveedor";
             this.txtidproveedor.Size = new System.Drawing.Size(23, 20);
             this.txtidproveedor.TabIndex = 5;
+            this.txtidproveedor.Visible = false;
             // 
             // btnbuscarproveedor
             // 
@@ -440,50 +486,6 @@
             this.btnagregarproducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnagregarproducto.UseVisualStyleBackColor = true;
             this.btnagregarproducto.Click += new System.EventHandler(this.btnagregarproducto_Click);
-            // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "IdProducto";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Visible = false;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            // 
-            // PrecioCompra
-            // 
-            this.PrecioCompra.HeaderText = "Precio Compra";
-            this.PrecioCompra.Name = "PrecioCompra";
-            this.PrecioCompra.ReadOnly = true;
-            // 
-            // PrecioVenta
-            // 
-            this.PrecioVenta.HeaderText = "Precio Venta";
-            this.PrecioVenta.Name = "PrecioVenta";
-            this.PrecioVenta.ReadOnly = true;
-            this.PrecioVenta.Visible = false;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
-            this.Subtotal.ReadOnly = true;
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.HeaderText = "";
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.ReadOnly = true;
             // 
             // FRMCompras
             // 

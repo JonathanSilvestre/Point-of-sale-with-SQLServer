@@ -51,7 +51,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("IdUsuario", obj.oUsuario.IdUsuario);
                     cmd.Parameters.AddWithValue("IdProveedor", obj.oProveedor.IdProveedor);
                     cmd.Parameters.AddWithValue("TipoDocumento", obj.TipoDocumento);
-                    cmd.Parameters.AddWithValue("NMumeroDocumento", obj.NumeroDocumento);
+                    cmd.Parameters.AddWithValue("NumeroDocumento", obj.NumeroDocumento);
                     cmd.Parameters.AddWithValue("MontoTotal", obj.MontoTotal);
                     cmd.Parameters.AddWithValue("DetalleCompra", DetalleCompra);
 
@@ -62,6 +62,7 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
+                    cmd.ExecuteNonQuery();
 
                     Respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();

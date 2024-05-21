@@ -19,9 +19,10 @@ namespace Punto_de_venta
     {
 
         private Usuario _Usuario;
+
         public FRMCompras(Usuario oUsuario = null)
         {
-            _Usuario = oUsuario;    
+            _Usuario = oUsuario;
             InitializeComponent();
         }
 
@@ -214,7 +215,7 @@ namespace Punto_de_venta
         {
             txtidproducto.Text = "0";
             txtcodproducto.Text = "";
-            txtcodproducto.BackColor = System.Drawing.Color.Magenta;
+            txtcodproducto.BackColor = System.Drawing.Color.White;
             txtproducto.Text = "";
             txtpreciocompra.Text = "";
             txtprecioventa.Text = "";
@@ -307,6 +308,37 @@ namespace Punto_de_venta
 
             int idcorrelativo = new CN_Compra().ObtenerCorrelativo();
             string numerodocumento = string.Format("{0:00000}", idcorrelativo);
+
+            Compra oCompra = new Compra()
+            {
+                oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
+                oProveedor = new Proveedor() { IdProveedor = Convert.ToInt32(txtidproveedor.Text) },
+                TipoDocumento = ((OpcionCombo)cbotipodocumento.SelectedItem).Texto,
+                NumeroDocumento = numerodocumento,
+                MontoTotal = Convert.ToDecimal(txttotalpagar.Text)
+            };
+
+            string mensaje = string.Empty;
+            bool respuesta = new CN_Compra().Registrar(oCompra,detalle_compra,out mensaje);
+
+            if (respuesta)
+            {
+                var result = MessageBox.Show("Numero de compra generado:\n" + numerodocumento + "\n\n¿Desea copiar " +
+                    "al portapapeles?","Mensaje", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                if(result == DialogResult.Yes)
+                {
+                    Clipboard.SetText(numerodocumento);
+                }
+                txtidproveedor.Text = "0";
+                txtdocproveedor.Text = "";
+                txtnombreproveedor.Text = "";
+                dgvdata.Rows.Clear();
+                calcularTotal();
+            }
+            else
+            {
+                MessageBox.Show(mensaje,"Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
             
         }
     }
