@@ -39,7 +39,6 @@ namespace Punto_de_venta
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
-            //Mostrar todos los usuarios
             List<Categoria> lista = new CN_Categoria().Listar();
 
             foreach (Categoria item in lista)
