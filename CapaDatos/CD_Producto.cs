@@ -69,7 +69,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
-                    cmd.Parameters.AddWithValue("IdCategoria", obj.oCategoria);
+                    cmd.Parameters.AddWithValue("IdCategoria", obj.oCategoria.IdCategoria);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
