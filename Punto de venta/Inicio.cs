@@ -92,7 +92,7 @@ namespace Punto_de_venta
 
         private void SubMenuRegistrarVentas_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(VentasMenu, new FRMVentas());
+            AbrirFormulario(VentasMenu, new FRMVentas(usuarioActual));
         }
 
         private void SubMenuDetallesVenta_Click(object sender, EventArgs e)
