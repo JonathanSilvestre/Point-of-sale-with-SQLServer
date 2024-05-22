@@ -43,5 +43,15 @@ namespace Punto_de_venta
         {
 
         }
+
+        private void txtfecha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbotipodocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
