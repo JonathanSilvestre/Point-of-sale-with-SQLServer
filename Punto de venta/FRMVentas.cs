@@ -113,7 +113,7 @@ namespace Punto_de_venta
             if (e.KeyData == Keys.Enter)
             {
 
-                Producto oProducto = new CN__Producto().Listar().Where(p => p.Codigo == txtcodproducto.Text && p.Estado == true).FirstOrDefault();
+                Producto oProducto = new CN_Producto().Listar().Where(p => p.Codigo == txtcodproducto.Text && p.Estado == true).FirstOrDefault();
 
                 if (oProducto != null)
                 {
@@ -228,16 +228,16 @@ namespace Punto_de_venta
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                var w = Properties.Resources.delete25.Width;
-                var h = Properties.Resources.delete25.Height;
+                var w = Properties.Resources.delate25.Width;
+                var h = Properties.Resources.delate25.Height;
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                e.Graphics.DrawImage(Properties.Resources.delete25, new Rectangle(x, y, w, h));
+                e.Graphics.DrawImage(Properties.Resources.delate25, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
         }
-
+            
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvdata.Columns[e.ColumnIndex].Name == "btneliminar")
@@ -294,7 +294,7 @@ namespace Punto_de_venta
             }
             else
             {
-                if (txtpagocon.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                if (txtpagacon.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
                 {
                     e.Handled = true;
                 }
@@ -326,12 +326,12 @@ namespace Punto_de_venta
             decimal pagacon;
             decimal total = Convert.ToDecimal(txttotalpagar.Text);
 
-            if (txtpagocon.Text.Trim() == "")
+            if (txtpagacon.Text.Trim() == "")
             {
-                txtpagocon.Text = "0";
+                txtpagacon.Text = "0";
             }
 
-            if (decimal.TryParse(txtpagocon.Text.Trim(), out pagacon))
+            if (decimal.TryParse(txtpagacon.Text.Trim(), out pagacon))
             {
 
                 if (pagacon < total)
@@ -361,14 +361,14 @@ namespace Punto_de_venta
         private void btncrearventa_Click(object sender, EventArgs e)
         {
 
-            if (txtdocumentocliente.Text == "")
+            if (txtnumerodocumento.Text == "")
             {
                 MessageBox.Show("Debe ingresar documento del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
 
-            if (txtnombrecliente.Text == "")
+            if (txtnombrecompleto.Text == "")
             {
                 MessageBox.Show("Debe ingresar nombre del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -411,9 +411,9 @@ namespace Punto_de_venta
                 oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
                 TipoDocumento = ((OpcionCombo)cbotipodocumento.SelectedItem).Texto,
                 NumeroDocumento = numeroDocumento,
-                DocumentoCliente = txtdocumentocliente.Text,
-                NombreCliente = txtnombrecliente.Text,
-                MontoPago = Convert.ToDecimal(txtpagocon.Text),
+                DocumentoCliente = txtnumerodocumento.Text,
+                NombreCliente = txtnombrecompleto.Text,
+                MontoPago = Convert.ToDecimal(txtpagacon.Text),
                 MontoCambio = Convert.ToDecimal(txtcambio.Text),
                 MontoTotal = Convert.ToDecimal(txttotalpagar.Text)
             };
@@ -429,11 +429,11 @@ namespace Punto_de_venta
                 if (result == DialogResult.Yes)
                     Clipboard.SetText(numeroDocumento);
 
-                txtdocumentocliente.Text = "";
-                txtnombrecliente.Text = "";
+                txtnumerodocumento.Text = "";
+                txtnombrecompleto.Text = "";
                 dgvdata.Rows.Clear();
                 calcularTotal();
-                txtpagocon.Text = "";
+                txtpagacon.Text = "";
                 txtcambio.Text = "";
             }
             else
