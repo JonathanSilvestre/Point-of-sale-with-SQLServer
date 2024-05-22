@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaEntidad;
 using FontAwesome.Sharp;
 using CapaNegocio;
+using Punto_de_venta.Modales;
 
 namespace Punto_de_venta
 {
@@ -119,14 +120,16 @@ namespace Punto_de_venta
             AbrirFormulario((IconMenuItem)sender, new FRMProveedores());
         }
 
-        private void ReportesMenu_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new FRMReportes());
-        }
 
         private void submenonegocio_Click(object sender, EventArgs e)
         {
             AbrirFormulario(MantenimientoMenu, new FRMNegocio());
+        }
+
+        private void AcercadeMenu_Click(object sender, EventArgs e)
+        {
+            mdAcercade md = new mdAcercade();
+            md.ShowDialog();
         }
     }
 }

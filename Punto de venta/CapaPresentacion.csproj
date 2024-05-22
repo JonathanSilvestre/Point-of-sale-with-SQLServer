@@ -142,6 +142,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataGridViewColum.cs" />
+    <Compile Include="FMRReporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMRReporteVentas.Designer.cs">
+      <DependentUpon>FMRReporteVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,12 @@
     <Compile Include="FRMProveedores.Designer.cs">
       <DependentUpon>FRMProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMReporteCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMReporteCompras.Designer.cs">
+      <DependentUpon>FRMReporteCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +232,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modales\mdAcercade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modales\mdAcercade.Designer.cs">
+      <DependentUpon>mdAcercade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modales\mdCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +259,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\OpcionCombo.cs" />
+    <EmbeddedResource Include="FMRReporteVentas.resx">
+      <DependentUpon>FMRReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMCategoria.resx">
       <DependentUpon>FRMCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +286,9 @@
     <EmbeddedResource Include="FRMProveedores.resx">
       <DependentUpon>FRMProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMReporteCompras.resx">
+      <DependentUpon>FRMReporteCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMReportes.resx">
       <DependentUpon>FRMReportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modales\mdAcercade.resx">
+      <DependentUpon>mdAcercade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modales\mdCliente.resx">
       <DependentUpon>mdCliente.cs</DependentUpon>
