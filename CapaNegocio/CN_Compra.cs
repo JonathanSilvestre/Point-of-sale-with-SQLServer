@@ -12,33 +12,31 @@ namespace CapaNegocio
     public class CN_Compra
     {
 
-        private CD_Compra objCD_Compra = new CD_Compra();
+        private CD_Compra objcd_compra = new CD_Compra();
+
 
         public int ObtenerCorrelativo()
         {
-            return objCD_Compra.ObtenerCorrelativo();
+            return objcd_compra.ObtenerCorrelativo();
         }
 
-        public bool Registrar(Compra obj,DataTable DetalleCompra, out string mensaje)
+        public bool Registrar(Compra obj,DataTable DetalleCompra, out string Mensaje)
         {
-           
-                return objCD_Compra.Registrar(obj,DetalleCompra, out mensaje);
-            
-
+            return objcd_compra.Registrar(obj,DetalleCompra, out Mensaje);
         }
 
-        public Compra ObtenerCompra(string numero)
-        {
-            Compra oCompra = objCD_Compra.ObtenerCompra(numero);
+        public Compra ObtenerCompra(string numero) {
 
-            if(oCompra.IdCompra != 0)
-            {
-                List<DetalleCompra> oDetalleCompra = objCD_Compra.ObtenerDetalleCompra(oCompra.IdCompra);
-                oCompra.oDetalleCompras = oDetalleCompra;
+            Compra oCompra = objcd_compra.ObtenerCompra(numero);
 
+            if (oCompra.IdCompra != 0) {
+                List<Detalle_Compra> oDetalleCompra = objcd_compra.ObtenerDetalleCompra(oCompra.IdCompra);
+
+                oCompra.oDetalleCompra = oDetalleCompra;
             }
             return oCompra;
         }
+
 
     }
 }

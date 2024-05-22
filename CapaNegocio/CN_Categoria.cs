@@ -10,60 +10,65 @@ namespace CapaNegocio
 {
     public class CN_Categoria
     {
-        private CD_Categoria objCD_Categoria = new CapaDatos.CD_Categoria();
+       
+        private CD_Categoria objcd_Categoria = new CD_Categoria();
+
         public List<Categoria> Listar()
         {
-            return objCD_Categoria.Listar();
+            return objcd_Categoria.Listar();
         }
 
-        public int Registrar(Categoria obj, out string mensaje)
+        public int Registrar(Categoria obj, out string Mensaje)
         {
-            mensaje = string.Empty;
+            Mensaje = string.Empty;
+
 
             if (obj.Descripcion == "")
             {
-                mensaje += "Es necesario la descripcion de la Categoria\n";
+                Mensaje += "Es necesario la descripcion de la Categoria\n";
             }
 
-            if (mensaje != string.Empty)
+            if (Mensaje != string.Empty)
             {
                 return 0;
             }
             else
             {
-                return objCD_Categoria.Registrar(obj, out mensaje);
+                return objcd_Categoria.Registrar(obj, out Mensaje);
             }
+
 
         }
 
-        public bool Editar(Categoria obj, out string mensaje)
+
+        public bool Editar(Categoria obj, out string Mensaje)
         {
 
-            mensaje = string.Empty;
+            Mensaje = string.Empty;
 
-            
             if (obj.Descripcion == "")
             {
-                mensaje += "Es necesario la descripcion de la Categoria\n";
+                Mensaje += "Es necesario la descripcion de la Categoria\n";
             }
 
-            if (mensaje != string.Empty)
+            if (Mensaje != string.Empty)
             {
                 return false;
             }
             else
             {
-                return objCD_Categoria.Editar(obj, out mensaje);
+                return objcd_Categoria.Editar(obj, out Mensaje);
             }
+
 
         }
 
-        public bool Eliminar(Categoria obj, out string mensaje)
+
+        public bool Eliminar(Categoria obj, out string Mensaje)
         {
-                return objCD_Categoria.Eliminar(obj, out mensaje);
-         }
+            return objcd_Categoria.Eliminar(obj, out Mensaje);
+        }
 
 
-        
     }
 }

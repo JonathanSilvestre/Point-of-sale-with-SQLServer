@@ -10,104 +10,83 @@ namespace CapaNegocio
 {
     public class CN_Cliente
     {
-        private CD_Cliente objCD_Cliente = new CapaDatos.CD_Cliente();
+
+        private CD_Cliente objcd_Cliente = new CD_Cliente();
+
 
         public List<Cliente> Listar()
         {
-            return objCD_Cliente.Listar();
+            return objcd_Cliente.Listar();
         }
 
-        public int Registrar(Cliente obj, out string mensaje)
+        public int Registrar(Cliente obj, out string Mensaje)
         {
-            mensaje = string.Empty;
-
-            if (obj.NombreCompleto == "")
-            {
-                mensaje += "Es necesario el nombre del Cliente\n";
-            }
+            Mensaje = string.Empty;
 
             if (obj.Documento == "")
             {
-                mensaje += "Es necesario el numero del Cliente\n";
+                Mensaje += "Es necesario el numero del Cliente\n";
+            }
+
+            if (obj.NombreCompleto == "")
+            {
+                Mensaje += "Es necesario el nombre completo del Cliente\n";
             }
 
             if (obj.Correo == "")
             {
-                mensaje += "Es necesario el correo del Cliente\n";
+                Mensaje += "Es necesario el correo del Cliente\n";
             }
 
-            if (mensaje != string.Empty)
+            if (Mensaje != string.Empty)
             {
                 return 0;
             }
             else
             {
-                return objCD_Cliente.Registrar(obj, out mensaje);
+                return objcd_Cliente.Registrar(obj, out Mensaje);
             }
+
 
         }
 
-        public bool Editar(Cliente obj, out string mensaje)
+
+        public bool Editar(Cliente obj, out string Mensaje)
         {
 
-            mensaje = string.Empty;
-
-            if (obj.NombreCompleto == "")
-            {
-                mensaje += "Es necesario el nombre del Cliente\n";
-            }
+            Mensaje = string.Empty;
 
             if (obj.Documento == "")
             {
-                mensaje += "Es necesario el numero del Cliente\n";
+                Mensaje += "Es necesario el numero del Cliente\n";
+            }
+
+            if (obj.NombreCompleto == "")
+            {
+                Mensaje += "Es necesario el nombre completo del Cliente\n";
             }
 
             if (obj.Correo == "")
             {
-                mensaje += "Es necesario el correo del Cliente\n";
+                Mensaje += "Es necesario el correo del Cliente\n";
             }
-
-            if (mensaje != string.Empty)
+            if (Mensaje != string.Empty)
             {
                 return false;
             }
             else
             {
-                return objCD_Cliente.Editar(obj, out mensaje);
+                return objcd_Cliente.Editar(obj, out Mensaje);
             }
+
 
         }
 
-        public bool Eliminar(Cliente obj, out string mensaje)
+
+        public bool Eliminar(Cliente obj, out string Mensaje)
         {
-
-            mensaje = string.Empty;
-
-            if (obj.NombreCompleto == "")
-            {
-                mensaje += "Es necesario el nombre del Cliente\n";
-            }
-
-            if (obj.Documento == "")
-            {
-                mensaje += "Es necesario el numero del Cliente\n";
-            }
-
-            if (obj.Correo == "")
-            {
-                mensaje += "Es necesario el correo del Cliente\n";
-            }
-
-            if (mensaje != string.Empty)
-            {
-                return false;
-            }
-            else
-            {
-                return objCD_Cliente.Eliminar(obj, out mensaje);
-            }
-
-
+            return objcd_Cliente.Eliminar(obj, out Mensaje);
         }
+
     }
 }

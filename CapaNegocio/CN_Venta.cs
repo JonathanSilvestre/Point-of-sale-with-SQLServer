@@ -13,13 +13,11 @@ namespace CapaNegocio
     {
         private CD_Venta objcd_venta = new CD_Venta();
 
-        public bool RestarStock(int idproducto, int cantidad)
-        {
+        public bool RestarStock(int idproducto, int cantidad) {
             return objcd_venta.RestarStock(idproducto, cantidad);
         }
 
-        public bool SumarStock(int idproducto, int cantidad)
-        {
+        public bool SumarStock(int idproducto, int cantidad) {
             return objcd_venta.SumarStock(idproducto, cantidad);
         }
 
@@ -33,17 +31,18 @@ namespace CapaNegocio
             return objcd_venta.Registrar(obj, DetalleVenta, out Mensaje);
         }
 
-        public Venta ObtenerVenta(string numero)
-        {
+        public Venta ObtenerVenta(string numero) {
             Venta oVenta = objcd_venta.ObtenerVenta(numero);
 
-            if (oVenta.IdVenta != 0)
-            {
-                List<DetalleVenta> oDetalleVenta = objcd_venta.ObtenerDetalleVenta(oVenta.IdVenta);
-                oVenta.oDetalleVenta = oDetalleVenta;
+            if (oVenta.IdVenta != 0) {
+                List<Detalle_Venta> oDetalleVenta = objcd_venta.ObtenerDetalleVenta(oVenta.IdVenta);
+                oVenta.oDetalle_Venta = oDetalleVenta;
             }
 
             return oVenta;
         }
+
+
+
     }
 }

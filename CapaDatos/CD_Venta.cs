@@ -1,8 +1,8 @@
 ﻿using CapaEntidad;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +11,7 @@ namespace CapaDatos
 {
     public class CD_Venta
     {
+
         public int ObtenerCorrelativo()
         {
             int idcorrelativo = 0;
@@ -136,13 +137,11 @@ namespace CapaDatos
         }
 
 
-        public Venta ObtenerVenta(string numero)
-        {
+        public Venta ObtenerVenta(string numero) {
 
             Venta obj = new Venta();
 
-            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
-            {
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena)) {
                 try
                 {
                     conexion.Open();
@@ -161,11 +160,9 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@numero", numero);
                     cmd.CommandType = System.Data.CommandType.Text;
 
-                    using (SqlDataReader dr = cmd.ExecuteReader())
-                    {
+                    using (SqlDataReader dr = cmd.ExecuteReader()) {
 
-                        while (dr.Read())
-                        {
+                        while (dr.Read()) {
                             obj = new Venta()
                             {
                                 IdVenta = int.Parse(dr["IdVenta"].ToString()),
@@ -183,21 +180,20 @@ namespace CapaDatos
                     }
 
                 }
-                catch
-                {
+                catch {
                     obj = new Venta();
                 }
+
             }
             return obj;
+
         }
 
 
-        public List<DetalleVenta> ObtenerDetalleVenta(int idVenta)
-        {
-            List<DetalleVenta> oLista = new List<DetalleVenta>();
+        public List<Detalle_Venta> ObtenerDetalleVenta(int idVenta) {
+            List<Detalle_Venta> oLista = new List<Detalle_Venta>();
 
-            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
-            {
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena)) {
                 try
                 {
                     conexion.Open();
@@ -215,7 +211,7 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            oLista.Add(new DetalleVenta()
+                            oLista.Add(new Detalle_Venta()
                             {
                                 oProducto = new Producto() { Nombre = dr["Nombre"].ToString() },
                                 PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"].ToString()),
@@ -226,12 +222,14 @@ namespace CapaDatos
                     }
 
                 }
-                catch
-                {
-                    oLista = new List<DetalleVenta>();
+                catch {
+                    oLista = new List<Detalle_Venta>();
                 }
             }
             return oLista;
         }
+
+
+
     }
 }

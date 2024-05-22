@@ -10,6 +10,8 @@ namespace CapaNegocio
 {
     public class CN_Negocio
     {
+
+
         private CD_Negocio objcd_negocio = new CD_Negocio();
 
 
@@ -22,7 +24,7 @@ namespace CapaNegocio
         {
             Mensaje = string.Empty;
 
-            if (obj.NombreNegocio == "")
+            if (obj.Nombre == "")
             {
                 Mensaje += "Es necesario el nombre\n";
             }
@@ -59,6 +61,7 @@ namespace CapaNegocio
         {
             return objcd_negocio.ActualizarLogo(imagen, out mensaje);
         }
+
 
     }
 }
